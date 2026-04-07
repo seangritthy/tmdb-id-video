@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.bongbee.tdmb.app-mergeReleaseResources-33:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\seang\\.gradle\\caches\\9.2.1\\transforms\\d359f58a34daa3a1b361c1219aeb668b\\workspace\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}
