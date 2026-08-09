@@ -46,8 +46,8 @@ class VidSrcExtractor(private val context: Context) {
 
                 if (AdBlocker.isAd(url)) return AdBlocker.createEmptyResource()
 
-                // Specific check for CloudNestra RCP URL
-                if (lowUrl.contains("cloudnestra.com/rcp/")) {
+                // Specific check for CloudNestra / CloudOrchestraNova RCP URL
+                if (lowUrl.contains("cloudnestra.com/rcp/") || lowUrl.contains("cloudorchestranova.com/rcp/") || lowUrl.contains("/rcp/") || lowUrl.contains("/prorcp/")) {
                     if (!deferred.isCompleted) {
                         deferred.complete(url)
                         return null
@@ -127,7 +127,7 @@ class VidSrcExtractor(private val context: Context) {
                         for (var i = 0; i < iframes.length; i++) {
                             try {
                                 var src = iframes[i].src;
-                                if (src.includes('cloudnestra') || src.includes('playm4u') || src.includes('vidplay') || src.includes('filemoon')) {
+                                if (src.includes('cloudnestra') || src.includes('cloudorchestranova') || src.includes('playm4u') || src.includes('vidplay') || src.includes('filemoon')) {
                                     if (!window.hasRedirectedToSource) {
                                         window.hasRedirectedToSource = true;
                                         window.location.href = src;
@@ -158,7 +158,7 @@ class VidSrcExtractor(private val context: Context) {
 
         val result = withTimeoutOrNull(40000) {
             deferred.await()
-        }
+        } ?: embedUrl
 
         webView.stopLoading()
         webView.destroy()
