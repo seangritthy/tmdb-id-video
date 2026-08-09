@@ -343,15 +343,6 @@
         <!-- ===== TOP BAR ===== -->
         <div class="top-bar">
 
-            <!-- AdGuard DNS Status -->
-            <div class="info-item" title="Protected by dns.adguard.com">
-                <span style="background:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;display:flex;align-items:center;gap:4px;">
-                    🛡️ dns.adguard.com
-                </span>
-            </div>
-
-            <span class="divider">|</span>
-
             <!-- TMDB ID (editable) -->
             <div class="info-item">
                 <span class="label">TMDB ID</span>
@@ -457,7 +448,10 @@
     <!-- ===== PLAYER MODAL ===== -->
     <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;">
         <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-            <span id="playerTitle" style="color:#fff;font-weight:700;font-size:15px;flex:1;min-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Player</span>
+            <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:140px;overflow:hidden;">
+                <span id="playerTitle" style="color:#fff;font-weight:700;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Player</span>
+                <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;" title="Protected by dns.adguard.com">🛡️ dns.adguard.com</span>
+            </div>
             <div id="epNav" style="display:none;align-items:center;gap:8px;">
                 <button onclick="prevEpisode()" style="background:#1e1e32;color:#fff;border:1px solid #2a2a3e;padding:6px 12px;border-radius:6px;font-weight:600;font-size:12px;cursor:pointer;">◄ Prev Ep</button>
                 <span id="epNavLabel" style="color:#aaa;font-size:12px;font-weight:bold;">S1 E1</span>
