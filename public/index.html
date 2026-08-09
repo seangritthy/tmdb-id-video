@@ -354,7 +354,7 @@
             <!-- Season -->
             <div class="info-item">
                 <span class="label">Season</span>
-                <span class="value na" id="seasonDisplay">—</span>
+                <input type="text" id="seasonInput" class="value" placeholder="—" style="width:45px; background:#1e1e32; border:none; color:#fff; font-weight:600; padding:4px 8px; border-radius:4px; text-align:center;" />
             </div>
 
             <span class="divider">|</span>
@@ -362,7 +362,7 @@
             <!-- Episode -->
             <div class="info-item">
                 <span class="label">Episode</span>
-                <span class="value na" id="episodeDisplay">—</span>
+                <input type="text" id="episodeInput" class="value" placeholder="—" style="width:45px; background:#1e1e32; border:none; color:#fff; font-weight:600; padding:4px 8px; border-radius:4px; text-align:center;" />
             </div>
 
             <span class="divider">|</span>
@@ -420,20 +420,30 @@
 
     </div>
 
+    <!-- ===== PLAYER MODAL ===== -->
+    <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+        <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span id="playerTitle" style="color:#fff;font-weight:700;font-size:16px;">Player</span>
+            <button onclick="closePlayer()" style="background:#dc2626;color:#fff;border:none;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;">✕ Close Player</button>
+        </div>
+        <div style="width:100%;max-width:900px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;border:1px solid #2a2a3e;">
+            <iframe id="playerIframe" src="" style="width:100%;height:100%;border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+        </div>
+    </div>
+
     <script>
         // ===== CONFIG =====
-        // Replace with your TMDB API Read Access Token
-        const TMDB_TOKEN = 'YOUR_TMDB_READ_ACCESS_TOKEN_HERE';
+        const TMDB_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZTEwYmYwNmU0ZjE1ZGFlNmU5ZmYzNWZmMzVlOGRmMiIsIm5iZiI6MTc0MzYwNjI3My45NjIsInN1YiI6IjY3ZWQ1MjAxODM2YzhlZGE3Y2FhZjc4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S3sKVtyFQ0kWZRrE4bVGGtw7VAHiEQ2cPUHmFlmmRrg';
 
         // ===== DOM REFS =====
         const tmdbInput = document.getElementById('tmdbInput');
+        const seasonInput = document.getElementById('seasonInput');
+        const episodeInput = document.getElementById('episodeInput');
         const searchInput = document.getElementById('searchInput');
         const posterBox = document.getElementById('posterBox');
         const posterImg = document.getElementById('posterImg');
         const placeholder = document.getElementById('placeholder');
         const infoContent = document.getElementById('infoContent');
-        const seasonDisplay = document.getElementById('seasonDisplay');
-        const episodeDisplay = document.getElementById('episodeDisplay');
 
         // ===== FETCH MOVIE =====
         async function fetchMovie() {
@@ -443,15 +453,18 @@
                 return;
             }
 
-            // Show loading
-            infoContent.innerHTML = `<p class="loading">⏳ Loading movie...</p>`;
+            const season = seasonInput.value.trim();
+            const episode = episodeInput.value.trim();
+            const isTv = Boolean(season || episode);
+            const type = isTv ? 'tv' : 'movie';
+
+            infoContent.innerHTML = `<p class="loading">⏳ Loading details...</p>`;
             posterBox.classList.remove('visible');
             placeholder.style.display = 'flex';
 
             try {
-                // Fetch movie details from TMDB
                 const response = await fetch(
-                    `https://api.themoviedb.org/3/movie/${tmdbId}?language=en-US`,
+                    `https://api.themoviedb.org/3/${type}/${tmdbId}?language=en-US`,
                     {
                         headers: {
                             'Authorization': `Bearer ${TMDB_TOKEN}`,
@@ -461,38 +474,22 @@
                 );
 
                 if (!response.ok) {
-                    if (response.status === 404) {
-                        throw new Error('Movie not found. Check the TMDB ID.');
-                    } else {
-                        throw new Error(`Error: ${response.status} - ${response.statusText}`);
-                    }
+                    throw new Error(`Media not found for ID ${tmdbId}.`);
                 }
 
                 const data = await response.json();
 
-                // ===== UPDATE UI =====
-                // Poster
                 if (data.poster_path) {
                     posterImg.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-                    posterImg.alt = data.title;
+                    posterImg.alt = data.title || data.name;
                     posterBox.classList.add('visible');
                     placeholder.style.display = 'none';
                 } else {
                     posterBox.classList.remove('visible');
                     placeholder.style.display = 'flex';
-                    placeholder.innerHTML = `
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <path d="M21 15l-5-5L5 21" />
-                        </svg>
-                        <span>No poster available</span>
-                    `;
                 }
 
-                // Movie Info
-                const year = data.release_date ? data.release_date.split('-')[0] : 'N/A';
-                const runtime = data.runtime ? `${data.runtime} min` : 'N/A';
+                const year = (data.release_date || data.first_air_date) ? (data.release_date || data.first_air_date).split('-')[0] : 'N/A';
                 const rating = data.vote_average ? data.vote_average.toFixed(1) : 'N/A';
                 const votes = data.vote_count || 0;
 
@@ -501,12 +498,10 @@
                     '<span style="color:#444;">No genres</span>';
 
                 infoContent.innerHTML = `
-                    <h2>${data.title}</h2>
-                    <p class="original-title">${data.original_title || ''}</p>
+                    <h2>${data.title || data.name}</h2>
+                    <p class="original-title">${data.original_title || data.original_name || ''}</p>
                     <div class="meta">
                         <span>${year}</span>
-                        <span>${data.production_countries && data.production_countries.length > 0 ? '🇺🇸' : '🌍'} ${data.production_countries && data.production_countries.length > 0 ? data.production_countries[0].iso_3166_1 : 'N/A'}</span>
-                        <span>⏱ ${runtime}</span>
                         <span class="rating">★ ${rating}</span>
                         <span style="color:#666;">(${votes} votes)</span>
                     </div>
@@ -514,31 +509,13 @@
                     <p class="overview">${data.overview || 'No overview available.'}</p>
                 `;
 
-                // Season/Episode (always N/A for movies)
-                seasonDisplay.textContent = '—';
-                episodeDisplay.textContent = '—';
-
-                // Update the input fields with the ID
                 tmdbInput.value = tmdbId;
                 searchInput.value = tmdbId;
 
             } catch (error) {
-                infoContent.innerHTML = `
-                    <p class="not-found">❌ ${error.message}</p>
-                    <p style="color:#555; font-size:13px; margin-top:8px;">
-                        Try: 10195 (Thor), 299536 (Avengers), 120 (Lord of the Rings)
-                    </p>
-                `;
+                infoContent.innerHTML = `<p class="not-found">❌ ${error.message}</p>`;
                 posterBox.classList.remove('visible');
                 placeholder.style.display = 'flex';
-                placeholder.innerHTML = `
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="8" x2="12" y2="12" />
-                        <line x1="12" y1="16" x2="12.01" y2="16" />
-                    </svg>
-                    <span>Movie not found</span>
-                `;
             }
         }
 
@@ -549,11 +526,29 @@
                 alert('No movie loaded. Search for a TMDB ID first.');
                 return;
             }
-            alert(`🎬 Playing movie: TMDB ID ${tmdbId}\n\n(Replace this with your actual video player)`);
-            // window.location.href = `/play/${tmdbId}`;
+
+            const season = seasonInput.value.trim();
+            const episode = episodeInput.value.trim();
+            const isTv = Boolean(season || episode);
+
+            const embedUrl = isTv
+                ? `https://vsembed.ru/embed/tv/${tmdbId}/${season || 1}/${episode || 1}`
+                : `https://vsembed.ru/embed/movie/${tmdbId}`;
+
+            const modal = document.getElementById('playerModal');
+            document.getElementById('playerTitle').textContent = `Playing: ${document.querySelector('.movie-info h2')?.textContent || 'TMDB ' + tmdbId}`;
+            document.getElementById('playerIframe').src = embedUrl;
+            modal.style.display = 'flex';
         }
 
-        // ===== AUTO-LOAD ON ENTER =====
+        function closePlayer() {
+            const modal = document.getElementById('playerModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.getElementById('playerIframe').src = '';
+            }
+        }
+
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -570,9 +565,7 @@
             }
         });
 
-        // ===== LOAD DEFAULT MOVIE ON PAGE LOAD =====
         window.addEventListener('DOMContentLoaded', () => {
-            // Load Thor (10195) by default
             fetchMovie();
         });
     </script>
