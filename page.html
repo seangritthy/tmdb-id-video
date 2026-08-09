@@ -425,6 +425,25 @@
 
     </div>
 
+    <!-- ===== PLAY CHOICE MODAL ===== -->
+    <div id="playChoiceModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9998;display:none;align-items:center;justify-content:center;padding:20px;">
+        <div style="background:#141425;border:1px solid #2a2a3e;border-radius:16px;padding:24px;max-width:380px;width:100%;text-align:center;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.8);">
+            <h3 style="margin-bottom:8px;font-size:18px;font-weight:700;">Select Playback Mode</h3>
+            <p style="color:#aaa;font-size:13px;margin-bottom:20px;">How would you like to watch this video?</p>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+                <button onclick="launchPopupPlayer()" style="background:#dc2626;color:#fff;border:none;padding:12px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;">
+                    ▶ Embedded Popup Player
+                </button>
+                <button onclick="launchDirectLink()" style="background:#1e1e32;color:#fff;border:1px solid #2a2a3e;padding:12px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;">
+                    🌐 Open Direct Link
+                </button>
+                <button onclick="closeChoiceModal()" style="background:transparent;color:#666;border:none;padding:8px;cursor:pointer;font-size:13px;margin-top:4px;">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== PLAYER MODAL ===== -->
     <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;">
         <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
@@ -532,6 +551,8 @@
         }
 
         // ===== PLAY VIDEO =====
+        let pendingEmbedUrl = '';
+
         function playVideo() {
             const tmdbId = tmdbInput.value.trim();
             if (!tmdbId) {
@@ -543,9 +564,24 @@
             const episode = episodeInput.value.trim();
             const isTv = Boolean(season || episode);
 
-            const embedUrl = isTv
+            pendingEmbedUrl = isTv
                 ? `https://vsembed.ru/embed/tv/${tmdbId}/${season || 1}/${episode || 1}`
                 : `https://vsembed.ru/embed/movie/${tmdbId}`;
+
+            // Show choice modal first
+            document.getElementById('playChoiceModal').style.display = 'flex';
+        }
+
+        function closeChoiceModal() {
+            document.getElementById('playChoiceModal').style.display = 'none';
+        }
+
+        function launchPopupPlayer() {
+            closeChoiceModal();
+            const tmdbId = tmdbInput.value.trim();
+            const season = seasonInput.value.trim();
+            const episode = episodeInput.value.trim();
+            const isTv = Boolean(season || episode);
 
             const modal = document.getElementById('playerModal');
             const epNav = document.getElementById('epNav');
@@ -559,22 +595,35 @@
             }
 
             document.getElementById('playerTitle').textContent = `Playing: ${document.querySelector('.movie-info h2')?.textContent || 'TMDB ' + tmdbId}`;
-            document.getElementById('playerIframe').src = embedUrl;
+            document.getElementById('playerIframe').src = pendingEmbedUrl;
             modal.style.display = 'flex';
+        }
+
+        function launchDirectLink() {
+            closeChoiceModal();
+            if (pendingEmbedUrl) {
+                window.open(pendingEmbedUrl, '_blank');
+            }
         }
 
         function prevEpisode() {
             let currentEp = parseInt(episodeInput.value.trim(), 10) || 1;
             if (currentEp > 1) {
                 episodeInput.value = currentEp - 1;
-                playVideo();
+                const tmdbId = tmdbInput.value.trim();
+                const season = seasonInput.value.trim();
+                pendingEmbedUrl = `https://vsembed.ru/embed/tv/${tmdbId}/${season || 1}/${currentEp - 1}`;
+                launchPopupPlayer();
             }
         }
 
         function nextEpisode() {
             let currentEp = parseInt(episodeInput.value.trim(), 10) || 1;
             episodeInput.value = currentEp + 1;
-            playVideo();
+            const tmdbId = tmdbInput.value.trim();
+            const season = seasonInput.value.trim();
+            pendingEmbedUrl = `https://vsembed.ru/embed/tv/${tmdbId}/${season || 1}/${currentEp + 1}`;
+            launchPopupPlayer();
         }
 
         function closePlayer() {
