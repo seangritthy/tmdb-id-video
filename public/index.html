@@ -452,11 +452,13 @@
 
         // ===== FETCH MOVIE =====
         async function fetchMovie() {
-            const tmdbId = tmdbInput.value.trim() || searchInput.value.trim();
+            const tmdbId = searchInput.value.trim() || tmdbInput.value.trim();
             if (!tmdbId) {
                 alert('Please enter a TMDB ID');
                 return;
             }
+            tmdbInput.value = tmdbId;
+            searchInput.value = tmdbId;
 
             const season = seasonInput.value.trim();
             const episode = episodeInput.value.trim();

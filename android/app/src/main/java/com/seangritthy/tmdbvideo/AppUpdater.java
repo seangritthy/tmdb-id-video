@@ -198,7 +198,7 @@ public class AppUpdater {
                 try {
                     HttpURLConnection conn = openConnectionWithRedirects(downloadUrl);
                     int fileLength = conn.getContentLength();
-                    File apkFile = new File(activity.getExternalFilesDir(null), "vdomov-update.apk");
+                    File apkFile = new File(activity.getExternalFilesDir(null), "tmdb-video-update.apk");
                     if (apkFile.exists()) {
                         apkFile.delete();
                     }
@@ -277,7 +277,11 @@ public class AppUpdater {
         Uri apkUri;
         try {
             if (Build.VERSION.SDK_INT >= 24) {
-                apkUri = Uri.parse("content://" + activity.getPackageName() + ".fileprovider/vdomov-update.apk");
+                apkUri = androidx.core.content.FileProvider.getUriForFile(
+                    activity,
+                    activity.getPackageName() + ".fileprovider",
+                    apkFile
+                );
             } else {
                 apkUri = Uri.fromFile(apkFile);
             }
