@@ -1,0 +1,23 @@
+commit fdad3efc5e6f38b8869dcb4bf2ff32701b563a33
+Author: seangritthy <seangritthy@github.com>
+Date:   Tue Aug 4 22:42:30 2026 +0700
+
+    Initial commit: vdomov Next.js app
+
+diff --git a/src/api/tmdb.ts b/src/api/tmdb.ts
+new file mode 100644
+index 0000000..1155f08
+--- /dev/null
++++ b/src/api/tmdb.ts
+@@ -0,0 +1,11 @@
++import { env } from "@/utils/env";
++import { isEmpty } from "@/utils/helpers";
++import { TMDB } from "tmdb-ts";
++
++const token = env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN;
++
++if (isEmpty(token)) {
++  throw new Error("TMDB_ACCESS_TOKEN is not defined");
++}
++
++export const tmdb = new TMDB(token);

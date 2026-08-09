@@ -1,0 +1,18 @@
+.vercel
+.env*
+.wrangler
+.next
+node_modules
+temp_bin/
+vercel_source/
+*.zip
+*.mp4
+tsconfig.tsbuildinfo
+
+# Debug scripts containing hardcoded API tokens - do not commit
+auto-token.mjs
+check-vercel.mjs
+deploy.ps1
+test-vercel-api.mjs
+apks/
+tmp_apks/

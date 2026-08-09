@@ -1,0 +1,66 @@
+name: Build Android APKs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Android APKs
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '21'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Sync Capacitor
+      run: npx cap sync android
+      
+    - name: Build Mobile APK (Release)
+      working-directory: ./android
+      run: |
+        chmod +x gradlew
+        ./gradlew assembleRelease
+      
+    - name: Rename Mobile APK
+      run: mv android/app/build/outputs/apk/release/app-release.apk vdomov-mobile.apk
+      
+    - name: Upload Mobile APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vdomov-mobile
+        path: vdomov-mobile.apk
+        
+    # We will just use the same APK for TV for now, as Android allows unified APKs if touchscreen is not required
+    - name: Rename TV APK
+      run: cp vdomov-mobile.apk vdomov-tv.apk
+      
+    - name: Upload TV APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vdomov-tv
+        path: vdomov-tv.apk
+        
+    - name: Release APKs
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: latest
+        name: Latest Build
+        files: |
+          vdomov-mobile.apk
+          vdomov-tv.apk

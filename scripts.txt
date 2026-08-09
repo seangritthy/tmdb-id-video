@@ -1,0 +1,153 @@
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-G1ME5TV6KQ');
+
+--- SCRIPT ---
+
+{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/","url":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/","name":"The Rebel-Kompoul Chor Chet Chea-45END | Asia Drama | Asia Drama KH","isPartOf":{"@id":"https:\/\/asiadrama.net\/#website"},"primaryImageOfPage":{"@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/#primaryimage"},"image":{"@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/#primaryimage"},"thumbnailUrl":"https:\/\/asiadrama.net\/wp-content\/uploads\/2026\/06\/The-Rebel-1x2-1.jpg","datePublished":"2026-06-26T05:44:29+00:00","dateModified":"2026-06-26T05:45:28+00:00","description":"Watch and download High Quality Korean drama, movies,Chinese Drama and other Asian dramas with english Korean Thai Chinese Indonesian subtitles online free on Asia Drama And Asia Drama KH.","breadcrumb":{"@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/asiadrama.net\/tvshows\/the-rebel\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/#primaryimage","url":"https:\/\/asiadrama.net\/wp-content\/uploads\/2026\/06\/The-Rebel-1x2-1.jpg","contentUrl":"https:\/\/asiadrama.net\/wp-content\/uploads\/2026\/06\/The-Rebel-1x2-1.jpg","width":740,"height":1112},{"@type":"BreadcrumbList","@id":"https:\/\/asiadrama.net\/tvshows\/the-rebel\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/asiadrama.net\/"},{"@type":"ListItem","position":2,"name":"TV Shows","item":"https:\/\/asiadrama.net\/tvshows\/"},{"@type":"ListItem","position":3,"name":"The Rebel-Kompoul Chor Chet Chea-45END"}]},{"@type":"WebSite","@id":"https:\/\/asiadrama.net\/#website","url":"https:\/\/asiadrama.net\/","name":"Asia Drama Kh | Asian Drama | Khmer Dubbed Full HD | Watch Free | Merl Movies Free","description":"Asian Drama | Asia Drama Kh | Khmer Dubbed Full HD | Watch Free  | Merl Movies Free","publisher":{"@id":"https:\/\/asiadrama.net\/#\/schema\/person\/1d5666ee1a56ede035993bca6cbbe938"},"alternateName":"asiadramakh","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/asiadrama.net\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":"https:\/\/asiadrama.net\/#\/schema\/person\/1d5666ee1a56ede035993bca6cbbe938","name":"cheakosal1999","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/asiadrama.net\/wp-content\/uploads\/2023\/09\/favicon.png","url":"https:\/\/asiadrama.net\/wp-content\/uploads\/2023\/09\/favicon.png","contentUrl":"https:\/\/asiadrama.net\/wp-content\/uploads\/2023\/09\/favicon.png","width":512,"height":512,"caption":"cheakosal1999"},"logo":{"@id":"https:\/\/asiadrama.net\/wp-content\/uploads\/2023\/09\/favicon.png"},"sameAs":["https:\/\/asiadrama.net"]}]}
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+/* <![CDATA[ */var dtAjax = {"url":"\/wp-admin\/admin-ajax.php","player_api":"https:\/\/asiadrama.net\/wp-json\/dooplayer\/v2\/","play_ajaxmd":"1","play_method":"wp_json","googlercptc":null,"classitem":"6","loading":"Loading..","afavorites":"Add to favorites","rfavorites":"Remove of favorites","views":"Views","remove":"Remove","isawit":"I saw it","send":"Data send..","updating":"Updating data..","error":"Error","pending":"Pending review","ltipe":"Download","sending":"Sending data","enabled":"Enable","disabled":"Disable","trash":"Delete","lshared":"Links Shared","ladmin":"Manage pending links","sendingrep":"Please wait, sending data..","ready":"Ready","deletelin":"Do you really want to delete this link?"};/* ]]> */
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+/* <![CDATA[ */var ss_l18n = {"enable_movies":"1","enable_tvshows":"1","enable_seasons":"1","enable_episodes":"1","require_login":"","nonce":"52f21c3518","url":"\/wp-admin\/admin-ajax.php"};/* ]]> */
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+/* <![CDATA[ */window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("set","linker",{"domains":["asiadrama.net"]});gtag("js", new Date());gtag("set", "developer_id.dZTNiMT", true);gtag("config", "GT-W6KM7ZF");/* ]]> */
+
+--- SCRIPT ---
+
+jQuery(document).ready(function(a){"false"==dtGonza.mobile&&a(window).load(function(){a(".scrolling").mCustomScrollbar({theme:"minimal-dark",scrollInertia:200,scrollButtons:{enable:!0},callbacks:{onTotalScrollOffset:100,alwaysTriggerOffsets:!1}})})});
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+(function(s){s.dataset.zone='11237799',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+
+--- SCRIPT ---
+
+//<![CDATA[
+var ancplayer = {load:{'width'    : '100%','height'   : '420px','autoplay' : 'true', // true or false
+'embedplay': '1', // 1 or 0 // 1 = autoplay
+'site'     : 'Admin'
+},sv:{'list_sv': 'subdrama.site,dailymotion.com,imov.lol,docs.google.com,drive.google.com,facebook.com,googlevideo.com,mediafire.com,mega.nz,ok.ru,https://bigf.bigo.sg,onecloud.media,plus.google.com,vimeo.com,youtube.com','ten_sv': 'subdrama,Daily,imov,Docs,bigf.bigo,Drive,Facebook,FB,Google,Me,Mega,Ok,onecloudPlus,Vimeo,Youtube',}}//]]>
+
+--- SCRIPT ---
+
+//<![CDATA[
+function ancMedia(){url=window.location.href,home=ancplayer.load.site,eps=new Array,sv=ancplayer.sv.list_sv.split(","),tensv=ancplayer.sv.ten_sv.split(","),width=ancplayer.load.width,height=ancplayer.load.height,imgload=ancplayer.load.imgload,auto=ancplayer.load.autoplay,eauto=ancplayer.load.embedplay,this.fu=function(b,a,c){if(null==a&&null==c)return document.getElementById(b).innerHTML;null!=a&&null==c?document.getElementById(b).innerHTML=a:document.getElementById(b).style[c]=a},this.read=function(){return b=this.fu("anc_data"),c='<div id="b_data" style="display:none;visibility: hidden;">',d="</div>",b=(b=(b=(b=b.replace(/\<id\>/gi,c)).replace(/\<\/id\>/gi,d)).replace(/\[id\]/gi,c)).replace(/\[\/id\]/gi,d),this.fu("anc_data",b),-1!=b.indexOf("anc*")?0>=(b=decodeanc(b=(b=(b=this.fu("b_data")).replace("anc*","")).substring(0,b.length))).indexOf("|")&&(b=";"+b+"|"):0>=(b=this.fu("b_data")).indexOf("|")&&(b=";"+b+"|"),b},l_spi=(data=this.read()).split("|").length,l_spk=function(a){return data.split("|")[a].split(";").length},d_spi=function(a){return data.split("|")[a]},d_spk=function(a,b){return data.split("|")[a].split(";")[b]},pc=["0","a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s"],svt="",svx=1,this.setCookie=function(c,d,b){var a=new Date;a.setDate(a.getDate()+b);var e=escape(d)+(null==b?"":"; expires="+a.toUTCString());document.cookie=c+"="+e},this.getCookie=function(e){var a,c,d,b=document.cookie.split(";");for(a=0;a<b.length;a++)if(c=b[a].substr(0,b[a].indexOf("=")),d=b[a].substr(b[a].indexOf("=")+1),c=c.replace(/^\s+|\s+$/g,""),c==e)return unescape(d)},this.Play=function(){for(var a=0;a<tensv.length;a++){var d=tensv[a].split(".")[0];""==d&&(d=home),eps[a]=""}for(var b=0;b<l_spi-1;b++)for(var c=0;c<l_spk(b);c++){name=d_spk(b,0),link=d_spk(b,c),name=2==l_spk(b)?d_spk(b,0):(name!=d_spk(b+1,0)&&Number(name),name+pc[c]);for(var a=0;a<sv.length;a++)-1!=d_spk(0,1).indexOf(sv[a])&&this.setCookie("_ancServer",a,365),-1!=link.indexOf(sv[a])&&(sv[a]&&(data_out='<li class="ep"><div class="listimg"><img class="mybackgroundx"/><a class="a_tap" id="ep_'+b+'" href="?eps='+a+"-"+b+"-"+c+'" title="'+home+'" >'+name+"</a></div></li>"),eps[a]+=data_out)}for(var a=0;a<sv.length;a++)-1!=eps[a].indexOf(home)&&(svt+='<ul id="server_'+svx+'" > '+eps[a]+"</ul>",svx++);svt='<div id="list_tap"> '+svt+" </div>",this.fu("anc_tp",svt),this.getUrl()},this.getUrl=function(){String.prototype.Geteps=function(b){var c=new RegExp("(^|&)"+b+"=([^&]*)(&|$)"),a=this.substr(this.indexOf("?")+1).match(c);return null!=a?unescape(a[2]):null},null==(eps_Url=url.Geteps("eps"))&&(eps_Url=this.getCookie("_ancServer")+"-0-1"),pserver=(eps_Url=eps_Url.split("-"))[0],pepisode=eps_Url[1],pelink=eps_Url[2],document.getElementById("ep_"+pepisode).className="tap_active",d_spk(pepisode,pelink)?this.load(d_spk(pepisode,pelink)):window.location.href=url.split("?")[0]},this.load=function(b){-1!=b.indexOf(sv[0])&&(obj=a(b=(b=(b=b.replace(/\/watch\?v=/gi,"/embed/")).replace(/\feature\=player\_embedded/gi,"")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[1])&&(obj=a(b=(b=b.replace(/anc\.you\/watch\?v=/gi,"https://youtube.com/embed/")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[2])&&(obj=a(b=b.replace(/anc\.yl/gi,"https://www.youtube.com/p"))[1]),-1!=b.indexOf(sv[3])&&(obj=a(b=(b=b.replace(/anc\.mp4\/http/gi,"http")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[4])&&(obj=a(b=(b=b.replace(/anc\.flv\/http/gi,"http")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[5])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[6])&&(obj=a(b=(b=(b=(b=b.replace(/anc\.ps/gi,"https://picasaweb.google.com")).replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[7])&&(obj=a(b=(b=(b=(b=b.replace(/anc\.tm/gi,"https://picasaweb.google.com")).replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[8])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[9])&&(obj=a(b=(b=b.replace(/edit\?pli\=1/gi,"preview?pli=1")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[10])&&(obj=a(b=b.replace(/edit/gi,"preview"))[0]),-1!=b.indexOf(sv[11])&&(obj=a(b)[0]),-1!=b.indexOf(sv[12])&&(obj=a(b)[0]),-1!=b.indexOf(sv[13])&&(obj=a(b)[2]),-1!=b.indexOf(sv[14])&&(obj=a(b)[2]),-1!=b.indexOf(sv[15])&&(obj=a(b)[0]),-1!=b.indexOf(sv[16])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[17])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[18])&&(obj=a(b)[2]),-1!=b.indexOf(sv[19])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[20])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[21])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[2]),-1!=b.indexOf(sv[22])&&(obj=a(b)[1]);for(var c=23;c<sv.length;c++)-1!=b.indexOf(sv[c])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]);this.fu("anc_pl",obj)};var a=function(a){return obj=['<div id="logoplayer">  </div><iframe id="playerayer"  src="'+a+"?autoplay="+eauto+'" width="'+width+'" height="'+height+'" allow="autoplay" allowfullscreen="true" frameborder="0"/></iframe>']}}var M=new ancMedia;M.Play();//]]>
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+//<![CDATA[
+var antplayer = {load:{'autoplay':'true','embedplay':'1','site':' Roscheat'},sv:{'list_sv':'bigf.bigo.sg,bcovlive-a.akamaihd.net,t.ly,ak2.rmbl.ws,hugh.cdn.rumble.cloud,sp.rmbl.ws,cdn1.kingschat.online,cdn1.hlsflix.com,vod-normal-global-cdn-z02.sooplive.co.kr,upload-vod-cdn.sooplive.com','ten_sv':'bcovlive-a.akamaihd,bigf.bigo,tly,ak2.rmbl,hugh.cdn.rumble,sp.rmbl,cdn1.kingschat,cdn1.hlsflix,vod-normal-global-cdn-z02.sooplive,upload-vod-cdn.sooplive',}}//]]>
+
+--- SCRIPT ---
+
+//<![CDATA[
+function antMedia(){url=window.location.href,home=antplayer.load.site,eps=new Array,sv=antplayer.sv.list_sv.split(","),tensv=antplayer.sv.ten_sv.split(","),width=antplayer.load.width,height=antplayer.load.height,imgload=antplayer.load.imgload,auto=antplayer.load.autoplay,eauto=antplayer.load.embedplay,this.fu=function(b,a,c){if(null==a&&null==c)return document.getElementById(b).innerHTML;null!=a&&null==c?document.getElementById(b).innerHTML=a:document.getElementById(b).style[c]=a},this.read=function(){return b=this.fu("ant_data"),c='<div id="b_data" style="display:none">',d="</div>",b=(b=(b=(b=b.replace(/\<id\>/gi,c)).replace(/\<\/id\>/gi,d)).replace(/\[id\]/gi,c)).replace(/\[\/id\]/gi,d),this.fu("ant_data",b),-1!=b.indexOf("ant*")?0>=(b=decodeant(b=(b=(b=this.fu("b_data")).replace("ant*","")).substring(0,b.length))).indexOf("|")&&(b=";"+b+"|"):0>=(b=this.fu("b_data")).indexOf("|")&&(b=";"+b+"|"),b},l_spi=(data=this.read()).split("|").length,l_spk=function(a){return data.split("|")[a].split(";").length},d_spi=function(a){return data.split("|")[a]},d_spk=function(a,b){return data.split("|")[a].split(";")[b]},pc=["0","a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s"],svt="",svx=1,this.setCookie=function(c,d,b){var a=new Date;a.setDate(a.getDate()+b);var e=escape(d)+(null==b?"":"; expires="+a.toUTCString());document.cookie=c+"="+e},this.getCookie=function(e){var a,c,d,b=document.cookie.split(";");for(a=0;a<b.length;a++)if(c=b[a].substr(0,b[a].indexOf("=")),d=b[a].substr(b[a].indexOf("=")+1),c=c.replace(/^\s+|\s+$/g,""),c==e)return unescape(d)},this.Play=function(){for(var a=0;a<tensv.length;a++){var d=tensv[a].split(".")[0];""==d&&(d=home),eps[a]=""}for(var b=0;b<l_spi-1;b++)for(var c=0;c<l_spk(b);c++){name=d_spk(b,0),link=d_spk(b,c),name=2==l_spk(b)?d_spk(b,0):(name!=d_spk(b+1,0)&&Number(name),name+pc[c]);for(var a=0;a<sv.length;a++)-1!=d_spk(0,1).indexOf(sv[a])&&this.setCookie("_antServer",a,365),-1!=link.indexOf(sv[a])&&(sv[a]&&(data_out='<li class="ep"><a class="a_tap" id="ep_'+b+'" href="?eps='+a+"-"+b+"-"+c+'" title="'+home+'" >'+name+"</a></li>"),eps[a]+=data_out)}for(var a=0;a<sv.length;a++)-1!=eps[a].indexOf(home)&&(svt+='<ul id="server_'+svx+'" > '+eps[a]+"</ul>",svx++);svt='<div id="list_tap"> '+svt+" </div>",this.fu("ant_tp",svt),this.getUrl()},this.getUrl=function(){String.prototype.Geteps=function(b){var c=new RegExp("(^|&)"+b+"=([^&]*)(&|$)"),a=this.substr(this.indexOf("?")+1).match(c);return null!=a?unescape(a[2]):null},null==(eps_Url=url.Geteps("eps"))&&(eps_Url=this.getCookie("_antServer")+"-0-1"),pserver=(eps_Url=eps_Url.split("-"))[0],pepisode=eps_Url[1],pelink=eps_Url[2],document.getElementById("ep_"+pepisode).className="tap_active",d_spk(pepisode,pelink)?this.load(d_spk(pepisode,pelink)):window.location.href=url.split("?")[0]},this.load=function(b){-1!=b.indexOf(sv[0])&&(obj=a(b=(b=(b=b.replace(/\/watch\?v=/gi,"/embed/")).replace(/\feature\=player\_embedded/gi,"")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[1])&&(obj=a(b=(b=b.replace(/ant\.you\/watch\?v=/gi,"https://youtube.com/embed/")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[2])&&(obj=a(b=b.replace(/ant\.yl/gi,"https://www.youtube.com/p"))[1]),-1!=b.indexOf(sv[3])&&(obj=a(b=(b=b.replace(/ant\.mp4\/http/gi,"http")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[4])&&(obj=a(b=(b=b.replace(/ant\.flv\/http/gi,"http")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[5])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[6])&&(obj=a(b=(b=(b=(b=b.replace(/ant\.ps/gi,"https://picasaweb.google.com")).replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[7])&&(obj=a(b=(b=(b=(b=b.replace(/ant\.tm/gi,"https://picasaweb.google.com")).replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[8])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[9])&&(obj=a(b=(b=b.replace(/edit\?pli\=1/gi,"preview?pli=1")).replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[10])&&(obj=a(b=b.replace(/edit/gi,"preview"))[0]),-1!=b.indexOf(sv[11])&&(obj=a(b)[0]),-1!=b.indexOf(sv[12])&&(obj=a(b)[0]),-1!=b.indexOf(sv[13])&&(obj=a(b)[2]),-1!=b.indexOf(sv[14])&&(obj=a(b)[2]),-1!=b.indexOf(sv[15])&&(obj=a(b)[0]),-1!=b.indexOf(sv[16])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[17])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[18])&&(obj=a(b)[2]),-1!=b.indexOf(sv[19])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[20])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]),-1!=b.indexOf(sv[21])&&(obj=a(b=(b=(b=b.replace(/\*/gi,"&")).replace(/\@/gi,"&")).replace(/\#sub=/gi,"&captions.file="))[2]),-1!=b.indexOf(sv[22])&&(obj=a(b)[1]);for(var c=23;c<sv.length;c++)-1!=b.indexOf(sv[c])&&(obj=a(b=b.replace(/\#sub=/gi,"&captions.file="))[0]);this.fu("ant_pl",obj)};var a=function(a){return obj=['<video class="video-js vjs-16-9 vjs-big-play-centered" controls preload="auto" data-setup="{}"><source src="'+a+"?autoplay="+eauto+'"/></video>']}}var M=new antMedia;M.Play();//]]>
+
+--- SCRIPT ---
+
+//<![CDATA[
+var coll = document.getElementsByClassName("collapsible");var i;for (i = 0; i < coll.length; i++) {coll[i].addEventListener("click", function() {this.classList.toggle("active");var content = this.nextElementSibling;if (content.style.display === "none") {content.style.display = "block";} else {content.style.display = "none";}});}//]]>
+
+--- SCRIPT ---
+
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/dooplay\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+
+--- SCRIPT ---
+
+jQuery(document).ready(function($) {$("#dt_galery").owlCarousel({ items:3,autoPlay:false,itemsDesktop:[1199,3],itemsDesktopSmall:[980,3],itemsTablet:[768,3],itemsTabletSmall:false,itemsMobile:[479,1]});$("#dt_galery_ep").owlCarousel({ items:2,autoPlay:false });$("#single_relacionados").owlCarousel({ items:6,autoPlay:3000,stopOnHover:true,pagination:false,itemsDesktop:[1199,6],itemsDesktopSmall:[980,6],itemsTablet:[768,5],itemsTabletSmall:false,itemsMobile:[479,3] });$(".reset").click(function(event){ if (!confirm( dtGonza.reset_all )) { event.preventDefault() } });$(".addcontent").click(function(event){ if(!confirm(dtGonza.manually_content)){ event.preventDefault() } });});
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+/* <![CDATA[ */var dtGonza = {"api":"https:\/\/asiadrama.net\/wp-json\/dooplay\/search\/","glossary":"https:\/\/asiadrama.net\/wp-json\/dooplay\/glossary\/","nonce":"dbd83e1759","area":".live-search","button":".search-button","more":"View all results","mobile":"1","reset_all":"Really you want to restart all data?","manually_content":"They sure have added content manually?","loading":"Loading..","loadingplayer":"Loading player..","selectaplayer":"Select a video player","playeradstime":null,"autoplayer":"1","livesearchactive":"1"};/* ]]> */
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+
+
+--- SCRIPT ---
+
+const adKey = "centeredPopupLastShown";function showPopup() {const lastShown = localStorage.getItem(adKey);const now = Date.now();const THIRTY_MINUTES = 30 * 60 * 1000;if (!lastShown || now - lastShown > THIRTY_MINUTES) {document.getElementById("popupAd").style.display = "block";localStorage.setItem(adKey, now.toString());}}function closePopup() {document.getElementById("popupAd").style.display = "none";}window.onload = function () {showPopup();};
