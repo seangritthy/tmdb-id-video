@@ -143,8 +143,8 @@ class VidSrcExtractor(private val context: Context) {
 
         // 5. Spoof Desktop Client Hints Headers
         val headers = mapOf(
-            "Referer" to "https://vidsrc.xyz/",
-            "Origin" to "https://vidsrc.xyz/",
+            "Referer" to "https://vsembed.ru/",
+            "Origin" to "https://vsembed.ru/",
             "Sec-Ch-Ua" to "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\"",
             "Sec-Ch-Ua-Mobile" to "?0",
             "Sec-Ch-Ua-Platform" to "\"Windows\"",

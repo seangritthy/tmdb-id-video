@@ -101,14 +101,14 @@ class MainActivity : AppCompatActivity() {
         extractionJob?.cancel()
         
         val url = if (season.isNotBlank() && episode.isNotBlank()) {
-            "https://vidsrc.to/embed/tv/$id/$season/$episode"
+            "https://vsembed.ru/embed/tv/$id/$season/$episode"
         } else {
-            "https://vidsrc.to/embed/movie/$id"
+            "https://vsembed.ru/embed/movie/$id"
         }
 
         binding.progressIndicator.visibility = View.VISIBLE
         binding.btnPlay.visibility = View.GONE
-        updateStatus("Extracting from vidsrc.to...", url)
+        updateStatus("Extracting from vsembed.ru...", url)
 
         extractionJob = lifecycleScope.launch {
             try {
