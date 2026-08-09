@@ -37,9 +37,10 @@ public class MainActivity extends BridgeActivity {
                     if (request != null && request.getUrl() != null) {
                         String urlStr = request.getUrl().toString().toLowerCase();
                         if (urlStr.startsWith("http://") || urlStr.startsWith("https://")) {
-                            if (!urlStr.contains("vsembed.ru") && !urlStr.contains("themoviedb.org") && !urlStr.contains("tmdb.org")) {
-                                return true; // Block top-level redirects to external ad sites!
+                            if (urlStr.contains("localhost") || urlStr.contains("127.0.0.1") || urlStr.contains("vsembed.ru") || urlStr.contains("themoviedb.org") || urlStr.contains("tmdb.org")) {
+                                return super.shouldOverrideUrlLoading(view, request);
                             }
+                            return true; // Block external ad redirects!
                         }
                     }
                     return super.shouldOverrideUrlLoading(view, request);
