@@ -425,6 +425,26 @@
 
     </div>
 
+    <!-- ===== ADGUARD DNS AD CATCH MODAL ===== -->
+    <div id="adCatchModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px;">
+        <div style="background:#141425;border:1px solid #2a2a3e;border-radius:16px;padding:24px;max-width:420px;width:100%;text-align:center;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.9);">
+            <div style="font-size:28px;margin-bottom:6px;">🛡️</div>
+            <h3 style="margin-bottom:4px;font-size:17px;font-weight:700;">AdGuard DNS Interceptor</h3>
+            <p style="color:#aaa;font-size:12px;margin-bottom:12px;">dns.adguard.com caught an ad / popup URL:</p>
+            <div id="caughtUrlBox" style="background:#0d0d1a;border:1px solid #2a2a3e;border-radius:8px;padding:10px;font-size:11px;color:#f5c518;word-break:break-all;max-height:80px;overflow-y:auto;margin-bottom:18px;text-align:left;font-family:monospace;">
+                https://...
+            </div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+                <button onclick="confirmAdGo()" style="flex:1;background:#dc2626;color:#fff;border:none;padding:10px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;">
+                    Go
+                </button>
+                <button onclick="cancelAdGo()" style="flex:1;background:#1e1e32;color:#fff;border:1px solid #2a2a3e;padding:10px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px;">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== PLAYER MODAL ===== -->
     <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;">
         <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
@@ -531,13 +551,39 @@
             }
         }
 
-        // ===== POPUP / AD INTERCEPTOR =====
+        // ===== ADGUARD DNS & POPUP CATCHER =====
+        let pendingAdUrl = '';
+
+        function catchAdUrl(url) {
+            pendingAdUrl = url || 'External Ad Popup Window';
+            const box = document.getElementById('caughtUrlBox');
+            if (box) {
+                box.textContent = pendingAdUrl;
+            }
+            const modal = document.getElementById('adCatchModal');
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        }
+
+        function confirmAdGo() {
+            const modal = document.getElementById('adCatchModal');
+            if (modal) modal.style.display = 'none';
+            if (pendingAdUrl && (pendingAdUrl.startsWith('http') || pendingAdUrl.startsWith('//'))) {
+                _origWindowOpen(pendingAdUrl, '_blank');
+            }
+            pendingAdUrl = '';
+        }
+
+        function cancelAdGo() {
+            const modal = document.getElementById('adCatchModal');
+            if (modal) modal.style.display = 'none';
+            pendingAdUrl = '';
+        }
+
         const _origWindowOpen = window.open;
         window.open = function(url, target, features) {
-            const allow = confirm(`⚠️ External Ad / Link Triggered:\n\n${url || 'New Window'}\n\nDo you want to open this link in a new window?\n\n[OK] = Open New Window\n[Cancel] = Block Ad`);
-            if (allow) {
-                return _origWindowOpen.apply(this, arguments);
-            }
+            catchAdUrl(url);
             return null;
         };
 
