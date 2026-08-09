@@ -558,7 +558,7 @@
         let pendingAdUrl = '';
 
         function catchAdUrl(url) {
-            pendingAdUrl = url || 'External Ad Popup Window';
+            pendingAdUrl = url || 'External Redirect Attempt';
             const box = document.getElementById('caughtUrlBox');
             if (box) {
                 box.textContent = pendingAdUrl;
@@ -589,6 +589,17 @@
             catchAdUrl(url);
             return null;
         };
+
+        // Intercept any link click or external redirect attempt
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (link && link.href && (link.href.startsWith('http://') || link.href.startsWith('https://'))) {
+                if (!link.href.includes('localhost') && !link.href.includes('127.0.0.1')) {
+                    e.preventDefault();
+                    catchAdUrl(link.href);
+                }
+            }
+        }, true);
 
         // ===== PLAY VIDEO =====
         function playVideo() {
