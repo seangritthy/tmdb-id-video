@@ -1,25 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { getMoviePlayers, getTvShowPlayers } from "@/utils/players";
 
 export default function HomePage() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("movie");
-  const [tmdbId, setTmdbId] = useState("550");
-  const [season, setSeason] = useState("1");
-  const [episode, setEpisode] = useState("1");
+  const [inputTmdbId, setInputTmdbId] = useState("550");
+  const [activeTmdbId, setActiveTmdbId] = useState("550");
+  
+  const [inputSeason, setInputSeason] = useState("1");
+  const [activeSeason, setActiveSeason] = useState("1");
+
+  const [inputEpisode, setInputEpisode] = useState("1");
+  const [activeEpisode, setActiveEpisode] = useState("1");
+
   const [selectedServer, setSelectedServer] = useState(0);
+  const playerRef = useRef<HTMLDivElement>(null);
 
   const players =
     mediaType === "movie"
-      ? getMoviePlayers(tmdbId || "550")
+      ? getMoviePlayers(activeTmdbId || "550")
       : getTvShowPlayers(
-          tmdbId || "1399",
-          parseInt(season, 10) || 1,
-          parseInt(episode, 10) || 1
+          activeTmdbId || "1399",
+          parseInt(activeSeason, 10) || 1,
+          parseInt(activeEpisode, 10) || 1
         );
 
   const activePlayer = players[selectedServer] || players[0];
+
+  const handlePlay = (e?: FormEvent) => {
+    if (e) e.preventDefault();
+    setActiveTmdbId(inputTmdbId.trim() || (mediaType === "movie" ? "550" : "1399"));
+    setActiveSeason(inputSeason.trim() || "1");
+    setActiveEpisode(inputEpisode.trim() || "1");
+    playerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const presets = [
     { title: "Fight Club (Movie)", type: "movie", id: "550" },
@@ -31,16 +46,24 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white p-4 md:p-8 flex flex-col gap-6 max-w-7xl mx-auto">
       {/* Header / Input Form */}
-      <div className="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 shadow-2xl backdrop-blur">
-        <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-4">
-          TMDB Video Player Extractor
-        </h1>
+      <form
+        onSubmit={handlePlay}
+        className="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 shadow-2xl backdrop-blur"
+      >
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            TMDB Video Player
+          </h1>
+          <span className="text-xs px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full font-semibold">
+            vsembed.ru Connected
+          </span>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
           {/* Media Type */}
           <div>
             <label className="block text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-2">
-              Media Type
+              Type
             </label>
             <div className="flex bg-neutral-950 p-1 rounded-xl border border-neutral-800">
               <button
@@ -69,7 +92,7 @@ export default function HomePage() {
                     : "text-neutral-400 hover:text-white"
                 }`}
               >
-                TV Show
+                TV
               </button>
             </div>
           </div>
@@ -81,8 +104,8 @@ export default function HomePage() {
             </label>
             <input
               type="text"
-              value={tmdbId}
-              onChange={(e) => setTmdbId(e.target.value)}
+              value={inputTmdbId}
+              onChange={(e) => setInputTmdbId(e.target.value)}
               placeholder="e.g. 550"
               className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
             />
@@ -97,8 +120,8 @@ export default function HomePage() {
                 </label>
                 <input
                   type="number"
-                  value={season}
-                  onChange={(e) => setSeason(e.target.value)}
+                  value={inputSeason}
+                  onChange={(e) => setInputSeason(e.target.value)}
                   min="1"
                   className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500 transition"
                 />
@@ -109,8 +132,8 @@ export default function HomePage() {
                 </label>
                 <input
                   type="number"
-                  value={episode}
-                  onChange={(e) => setEpisode(e.target.value)}
+                  value={inputEpisode}
+                  onChange={(e) => setInputEpisode(e.target.value)}
                   min="1"
                   className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500 transition"
                 />
@@ -121,7 +144,7 @@ export default function HomePage() {
           {/* Server Selector */}
           <div>
             <label className="block text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-2">
-              Player Server
+              Server
             </label>
             <select
               value={selectedServer}
@@ -135,6 +158,16 @@ export default function HomePage() {
               ))}
             </select>
           </div>
+
+          {/* Play Button */}
+          <div>
+            <button
+              type="submit"
+              className="w-full py-2.5 px-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-sm rounded-xl shadow-lg shadow-indigo-500/25 active:scale-[0.98] transition"
+            >
+              ▶ Play Video
+            </button>
+          </div>
         </div>
 
         {/* Quick Presets */}
@@ -146,9 +179,16 @@ export default function HomePage() {
               type="button"
               onClick={() => {
                 setMediaType(preset.type as "movie" | "tv");
-                setTmdbId(preset.id);
-                if (preset.s) setSeason(preset.s);
-                if (preset.e) setEpisode(preset.e);
+                setInputTmdbId(preset.id);
+                setActiveTmdbId(preset.id);
+                if (preset.s) {
+                  setInputSeason(preset.s);
+                  setActiveSeason(preset.s);
+                }
+                if (preset.e) {
+                  setInputEpisode(preset.e);
+                  setActiveEpisode(preset.e);
+                }
                 setSelectedServer(0);
               }}
               className="px-3 py-1 bg-neutral-800/60 hover:bg-neutral-800 text-neutral-300 hover:text-white rounded-lg text-xs font-medium transition"
@@ -157,10 +197,13 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-      </div>
+      </form>
 
       {/* Video Player Box */}
-      <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+      <div
+        ref={playerRef}
+        className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl"
+      >
         {activePlayer?.source ? (
           <iframe
             key={activePlayer.source}
@@ -171,7 +214,7 @@ export default function HomePage() {
           />
         ) : (
           <div className="flex items-center justify-center h-full text-neutral-500 text-sm">
-            Enter a valid TMDB ID above to load video player.
+            Enter a valid TMDB ID above and click Play Video.
           </div>
         )}
       </div>
