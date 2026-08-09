@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">vdomov</string>
-    <string name="title_activity_main">vdomov</string>
-    <string name="package_name">com.vdomov.app</string>
-    <string name="custom_url_scheme">com.vdomov.app</string>
+    <string name="app_name">TMDB Video</string>
+    <string name="title_activity_main">TMDB Video</string>
+    <string name="package_name">com.seangritthy.tmdbvideo</string>
+    <string name="custom_url_scheme">com.seangritthy.tmdbvideo</string>
 </resources>
