@@ -59,8 +59,8 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       ads: true,
     },
     {
-      title: "VidSrc 2",
-      source: `https://vidsrc.to/embed/movie/${id}`,
+      title: "VsEmbed",
+      source: `https://vsembed.ru/embed/movie/${id}`,
       ads: true,
     },
   ];
@@ -132,8 +132,8 @@ export const getTvShowPlayers = (
       ads: true,
     },
     {
-      title: "VidSrc 2",
-      source: `https://vidsrc.to/embed/tv/${id}/${season}/${episode}`,
+      title: "VsEmbed",
+      source: `https://vsembed.ru/embed/tv/${id}/${season}/${episode}`,
       ads: true,
     },
   ];
