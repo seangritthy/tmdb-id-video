@@ -11,13 +11,13 @@ android {
         applicationId = "com.bongbee.tdmb"
         minSdk = 26
         targetSdk = 35
-        versionCode = 15
-        versionName = "1.0.14"
+        versionCode = 16
+        versionName = "1.0.15"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "GITHUB_OWNER", "\"seangrrithy\"")
-        buildConfigField("String", "GITHUB_REPO", "\"TMDB_ID-Video\"")
+        buildConfigField("String", "GITHUB_OWNER", "\"seangritthy\"")
+        buildConfigField("String", "GITHUB_REPO", "\"tmdb-id-video\"")
     }
 
     buildTypes {
