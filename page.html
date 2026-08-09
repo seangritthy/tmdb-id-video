@@ -426,10 +426,15 @@
     </div>
 
     <!-- ===== PLAYER MODAL ===== -->
-    <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
-        <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-            <span id="playerTitle" style="color:#fff;font-weight:700;font-size:16px;">Player</span>
-            <button onclick="closePlayer()" style="background:#dc2626;color:#fff;border:none;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;">✕ Close Player</button>
+    <div id="playerModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;">
+        <div style="width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
+            <span id="playerTitle" style="color:#fff;font-weight:700;font-size:15px;flex:1;min-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Player</span>
+            <div id="epNav" style="display:none;align-items:center;gap:8px;">
+                <button onclick="prevEpisode()" style="background:#1e1e32;color:#fff;border:1px solid #2a2a3e;padding:6px 12px;border-radius:6px;font-weight:600;font-size:12px;cursor:pointer;">◄ Prev Ep</button>
+                <span id="epNavLabel" style="color:#aaa;font-size:12px;font-weight:bold;">S1 E1</span>
+                <button onclick="nextEpisode()" style="background:#1e1e32;color:#fff;border:1px solid #2a2a3e;padding:6px 12px;border-radius:6px;font-weight:600;font-size:12px;cursor:pointer;">Next Ep ►</button>
+            </div>
+            <button onclick="closePlayer()" style="background:#dc2626;color:#fff;border:none;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;">✕ Close</button>
         </div>
         <div style="width:100%;max-width:900px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;border:1px solid #2a2a3e;">
             <iframe id="playerIframe" src="" style="width:100%;height:100%;border:none;" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
@@ -543,9 +548,33 @@
                 : `https://vsembed.ru/embed/movie/${tmdbId}`;
 
             const modal = document.getElementById('playerModal');
+            const epNav = document.getElementById('epNav');
+            const epNavLabel = document.getElementById('epNavLabel');
+
+            if (isTv) {
+                epNav.style.display = 'flex';
+                epNavLabel.textContent = `S${season || 1} E${episode || 1}`;
+            } else {
+                epNav.style.display = 'none';
+            }
+
             document.getElementById('playerTitle').textContent = `Playing: ${document.querySelector('.movie-info h2')?.textContent || 'TMDB ' + tmdbId}`;
             document.getElementById('playerIframe').src = embedUrl;
             modal.style.display = 'flex';
+        }
+
+        function prevEpisode() {
+            let currentEp = parseInt(episodeInput.value.trim(), 10) || 1;
+            if (currentEp > 1) {
+                episodeInput.value = currentEp - 1;
+                playVideo();
+            }
+        }
+
+        function nextEpisode() {
+            let currentEp = parseInt(episodeInput.value.trim(), 10) || 1;
+            episodeInput.value = currentEp + 1;
+            playVideo();
         }
 
         function closePlayer() {
