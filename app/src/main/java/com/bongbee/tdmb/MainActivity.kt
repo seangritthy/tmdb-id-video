@@ -122,16 +122,7 @@ class MainActivity : AppCompatActivity() {
                     updateStatus("Extraction successful!", extractedUrl)
                     binding.btnPlay.visibility = View.VISIBLE
                     binding.btnPlay.setOnClickListener {
-                        try {
-                            val playIntent = android.content.Intent(android.content.Intent.ACTION_VIEW).apply {
-                                setDataAndType(android.net.Uri.parse(extractedUrl), if (extractedUrl.contains(".m3u8")) "application/x-mpegURL" else "video/*")
-                                addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
-                            }
-                            startActivity(playIntent)
-                        } catch (_: Exception) {
-                            val browserIntent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(extractedUrl))
-                            startActivity(browserIntent)
-                        }
+                        PlayerActivity.start(this@MainActivity, extractedUrl)
                     }
                 } else {
                     updateStatus("Extraction failed: No URL found", url)
